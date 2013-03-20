@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: https://insouciant.org
-title: William Chan's blag
-subtitle: I'll be in my bunk
-author: William Chan
+title: Insouciant
+subtitle: William Chan's blag
+author: willchan
 simple_search: https://google.com/search
-description:
+description: William Chan's blag.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -95,7 +95,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-34859479-1
 
 # Facebook Like
 facebook_like: false
