@@ -2,7 +2,11 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: https://insouciant.org
+# NOTE(willchan): Uncomment for real deployment
+# url: https://insouciant.org
+# NOTE(willchan): Uncomment for test deployment to /testing directory.
+url: https://insouciant.org/testing
+
 title: Insouciant
 subtitle: William Chan's blag
 author: willchan
@@ -29,13 +33,13 @@ email: willchan@gmail.com
 
 # NOTE(willchan): Uncomment for real deployment
 #root: /
-#permalink: /:categories/:title/
-# NOTE(willchan): Uncomment for test deployment to public /testing directory.
+#destination: public
+# NOTE(willchan): Uncomment for test deployment to /testing directory.
 root: /testing
-permalink: /testing/:categories/:title/
+destination: public/testing
 
+permalink: /:categories/:title/
 source: source
-destination: public
 plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
