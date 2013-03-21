@@ -20,7 +20,10 @@ description: William Chan's blag.
 date_format: "ordinal"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
-subscribe_rss: /atom.xml
+# NOTE(willchan): Uncomment for real deployment
+# subscribe_rss: /atom.xml
+# NOTE(willchan): Uncomment for test deployment to /testing directory.
+subscribe_rss: /testing/atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
 email: willchan@gmail.com
