@@ -29,36 +29,38 @@ For example, for www.gap.com, we can [compare][5] page loads on [Chrome 22][6] (
  [8]: http://webpagetest.org
  [9]: https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index
 
-[![gap.com waterfall/connection/bandwidth for chrome 22][11]][11]
-gap.com on Chrome 22
+<figure>
+{% img /images/2012/10/gapchrome22.png 'gap.com waterfall, connection, bandwidth for chrome 22' 'gap.com waterfall, connection, bandwidth for chrome 22' %}
+<figcaption>gap.com waterfall</figcaption>
+</figure>
+<figure>
+{% img /images/2012/10/gapchrome24.png 'gap.com waterfall, connection, bandwidth on chrome 24' 'gap.com waterfall, connection, bandwidth on chrome 24' %}
+<figcaption>gap.com waterfall</figcaption>
+</figure>
 
-[![gap.com waterfall/connection/bandwidth on chrome 24][12]][12]
-gap.com on Chrome 24
+Examining another [example][10] (cvs.com), [Chrome 22][11] again has better first paint / speed index scores, but [Chrome 24][12] has a shorter onload time. Diving into the waterfalls again, we can see that the reason Chrome 22 again has shorter first paint times is because it gets the stylesheets sooner, and [stylesheets block][13] [first paint][14] in order to prevent [FOUC][15]. What’s interesting about this case is that there’s no real bandwidth contention this time, since the last 3 stylesheets only add up to around 7KB. The contention is actually on the connections per host (limit is 6), since the images are requested first, and until some complete, the stylesheets (higher priority resources) requests cannot begin. However, unlike the gap.com case, there isn’t a period of low bandwidth utilization due to waiting for resources to be requested during the DOMContentLoaded event, so issuing the subresource requests earlier results in overall better bandwidth utilization, and thus reaching onload sooner.
 
-Examining another [example][12] (cvs.com), [Chrome 22][13] again has better first paint / speed index scores, but [Chrome 24][14] has a shorter onload time. Diving into the waterfalls again, we can see that the reason Chrome 22 again has shorter first paint times is because it gets the stylesheets sooner, and [stylesheets block][15] [first paint][16] in order to prevent [FOUC][17]. What’s interesting about this case is that there’s no real bandwidth contention this time, since the last 3 stylesheets only add up to around 7KB. The contention is actually on the connections per host (limit is 6), since the images are requested first, and until some complete, the stylesheets (higher priority resources) requests cannot begin. However, unlike the gap.com case, there isn’t a period of low bandwidth utilization due to waiting for resources to be requested during the DOMContentLoaded event, so issuing the subresource requests earlier results in overall better bandwidth utilization, and thus reaching onload sooner.
+ [10]: http://www.webpagetest.org/video/compare.php?tests=121021_W3_19D,121021_EA_19E
+ [11]: http://www.webpagetest.org/result/121021_W3_19D/
+ [12]: http://www.webpagetest.org/result/121021_EA_19E/
+ [13]: https://code.google.com/searchframe#OAMlx_jo-ck/src/third_party/WebKit/Source/WebCore/rendering/RenderBlock.cpp&exact_package=chromium&ct=rc&cd=2&q=fouc&l=2921
+ [14]: https://code.google.com/searchframe#OAMlx_jo-ck/src/third_party/WebKit/Source/WebCore/rendering/RenderLayer.cpp&exact_package=chromium&ct=rc&cd=3&q=fouc&l=3005
+ [15]: http://en.wikipedia.org/wiki/Flash_of_unstyled_content
 
- []: {% img /images/2012/10/gapchrome22.png %}
- []: {% img /images/2012/10/gapchrome24.png %}
- [12]: http://www.webpagetest.org/video/compare.php?tests=121021_W3_19D,121021_EA_19E
- [13]: http://www.webpagetest.org/result/121021_W3_19D/
- [14]: http://www.webpagetest.org/result/121021_EA_19E/
- [15]: https://code.google.com/searchframe#OAMlx_jo-ck/src/third_party/WebKit/Source/WebCore/rendering/RenderBlock.cpp&exact_package=chromium&ct=rc&cd=2&q=fouc&l=2921
- [16]: https://code.google.com/searchframe#OAMlx_jo-ck/src/third_party/WebKit/Source/WebCore/rendering/RenderLayer.cpp&exact_package=chromium&ct=rc&cd=3&q=fouc&l=3005
- [17]: http://en.wikipedia.org/wiki/Flash_of_unstyled_content
+<figure>
+{% img /images/2012/10/cvschrome22.png 'cvs.com waterfall, connection, bandwidth for chrome 22' 'cvs.com waterfall, connection, bandwidth for chrome 22' %}
+<figcaption>cvs.com waterfall</figcaption>
+</figure>
+<figure>
+{% img /images/2012/10/cvschrome24.png 'cvs.com waterfall, connection, bandwidth on chrome 24' 'cvs.com waterfall, connection, bandwidth on chrome 24' %}
+<figcaption>cvs.com waterfall</figcaption>
+</figure>
 
-[![cvs waterfall/connection/bandwidth chrome 22][19]][19]
-cvs.com on Chrome 22
+Yeah, there are cases where this change worsens the experience, and cases where it actually improves the user experience. In the real world though, what does it usually do? [Pat Meenan][16] ran a test of Chrome stable vs Chrome canary for us awhile back to check it out on a bunch of websites, and in aggregate, we saw a minor improvement in onload times with the new behavior, but a hit on the speed index and a significant hit on first paint time. Therefore, we’re calling this a [regression][17] and will either fix or revert the change by the time we hit code complete for Chrome 24.
 
-[![cvs.com waterfall/connection/bandwidth chrome 24][20]][20]
-cvs.com on Chrome 24
+ [16]: https://twitter.com/patmeenan
+ [17]: https://code.google.com/p/chromium/issues/detail?id=157763
 
-Yeah, there are cases where this change worsens the experience, and cases where it actually improves the user experience. In the real world though, what does it usually do? [Pat Meenan][20] ran a test of Chrome stable vs Chrome canary for us awhile back to check it out on a bunch of websites, and in aggregate, we saw a minor improvement in onload times with the new behavior, but a hit on the speed index and a significant hit on first paint time. Therefore, we’re calling this a [regression][21] and will either fix or revert the change by the time we hit code complete for Chrome 24.
+Update: Thanks to [Steve][18] for editorial suggestions and teaching me how to compare tests on WebPageTest :)
 
- []: https://insouciant.org/wp-content/uploads/2012/10/cvschrome22.png
- []: {% img /images/2012/10/cvschrome24.png %}
- [20]: https://twitter.com/patmeenan
- [21]: https://code.google.com/p/chromium/issues/detail?id=157763
-
-Update: Thanks to [Steve][22] for editorial suggestions and teaching me how to compare tests on WebPageTest :)
-
- [22]: https://twitter.com/souders
+ [18]: https://twitter.com/souders
