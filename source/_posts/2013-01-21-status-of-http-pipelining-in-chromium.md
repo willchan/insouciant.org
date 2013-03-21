@@ -2,18 +2,13 @@
 title: Status of HTTP pipelining in Chromium
 author: willchan
 layout: post
-permalink: http://insouciant.org/tech/status-of-http-pipelining-in-chromium/
-force_ssl:
-  - 1
 categories:
-  - Tech
+  - tech
 tags:
   - chromium
   - http pipelining
   - performance
 ---
-# 
-
 OK, people have asked me this enough times, so it’s time to write down what’s up with pipelining in Chromium. In short, Chromium has a very naive pipelining implementation that is off by default, and it’s unclear if we’ll ever enable it by default. The primary reasons we will not enable it for at least the foreseeable future are:
 
 *   Interoperability concerns

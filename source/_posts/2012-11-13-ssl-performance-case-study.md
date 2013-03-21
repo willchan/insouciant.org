@@ -9,8 +9,6 @@ tags:
   - performance
   - ssl
 ---
-# 
-
 Back when [Mike Belshe][1] was still at Google, he used to keep saying that SSL was the unoptimized frontier. Unfortunately, even years later, it still is. There’s low hanging fruit everywhere, and most folks, [myself included][2], don’t know what they’re doing. Tons of people are making basic mistakes. Anyone deploying a website served over HTTPS really ought to read [Adam Langley’s][3] [post on overclocking SSL][4]. There is a lot of useful information in his post. I’m going to call out a few of them really quickly as they pertain to latency:
 
  [1]: https://twitter.com/mikebelshe

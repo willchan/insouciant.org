@@ -2,11 +2,8 @@
 title: Connection Management in Chromium
 author: willchan
 layout: post
-permalink: http://insouciant.org/tech/connection-management-in-chromium/
-force_ssl:
-  - 1
 categories:
-  - Tech
+  - tech
 tags:
   - chromium
   - http
@@ -14,8 +11,6 @@ tags:
   - spdy
   - ssl
 ---
-# 
-
 Contents
 
 *   [1 Introduction][1]

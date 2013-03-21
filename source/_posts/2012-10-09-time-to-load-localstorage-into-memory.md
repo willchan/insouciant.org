@@ -2,20 +2,13 @@
 title: Time to load localStorage into memory
 author: willchan
 layout: post
-permalink: http://insouciant.org/tech/time-to-load-localstorage-into-memory/
-force_ssl:
-  - 1
-force_ssl_children:
-  - 1
 categories:
-  - Tech
+  - tech
 tags:
   - chromium
   - localstorage
   - performance
 ---
-# 
-
 For all the reasons that Taras Glek lists in [https://blog.mozilla.org/tglek/2012/02/22/psa-dom-local-storage-considered-harmful/][1], I’ve been very skeptical of using localStorage. Synchronous APIs that do I/O are the suck as far as I’m concerned. I was curious about how much of an effect this had in practice, so [I added Chromium histograms][2]  
 [ for it][2]. This tracks the time that it takes to load localStorage from the persistent disk store, which Chromium does on the first access, after which subsequent accesses \*should\* be a simple memory access or IPC roundtrip memory access. There’s potentially room for optimization here, where we could speculatively prime the in-memory data structure before the first access. I’m skeptical that’d have much impact though.
 

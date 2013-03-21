@@ -2,20 +2,13 @@
 title: Throttling Subresources Before First Paint
 author: willchan
 layout: post
-permalink: http://insouciant.org/tech/throttling-subresources-before-first-paint/
-force_ssl:
-  - 1
-force_ssl_children:
-  - 1
 categories:
-  - Tech
+  - tech
 tags:
   - chromium
   - performance
   - webkit
 ---
-# 
-
 In my last [post about resource prioritization][1], I mentioned that WebKit actually [holds back from issuing subresources that can’t block the parser before first paint][2]. Well, that’s true, except for the Chromium port, because recently we decided to [disable that][3]. You may be wondering, why would we do that?
 
  [1]: https://insouciant.org/tech/resource-prioritization-in-chromium/

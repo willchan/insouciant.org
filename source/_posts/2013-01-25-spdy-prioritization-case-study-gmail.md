@@ -2,16 +2,13 @@
 title: 'SPDY Prioritization Case Study &#8211; Gmail'
 author: willchan
 layout: post
-permalink: http://insouciant.org/tech/spdy-prioritization-case-study-gmail/
 categories:
-  - Tech
+  - tech
 tags:
   - chromium
   - performance
   - spdy
 ---
-# 
-
 Awhile back, Gmail team asked some Chromium devs why Google Chrome downloaded CSS so much more slowly than JS. This sounded strange to me, since I knew the code, and Chromium [clearly prioritizes script and stylesheets at the same level][1] (look for DetermineRequestPriority). I was initially skeptical of their claim, but then they said they had data that proved otherwise. Specifically, they told me:
 
  [1]: https://src.chromium.org/viewvc/chrome/trunk/src/content/browser/loader/resource_dispatcher_host_impl.cc?revision=178529&view=markup

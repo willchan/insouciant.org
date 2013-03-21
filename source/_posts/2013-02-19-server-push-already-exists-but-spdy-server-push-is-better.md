@@ -2,15 +2,11 @@
 title: '&#8220;Server Push&#8221; Already Exists, But SPDY Server Push Is Better'
 author: willchan
 layout: post
-permalink: >
-  http://insouciant.org/tech/server-push-already-exists-but-spdy-server-push-is-better/
 categories:
-  - Tech
+  - tech
 tags:
   - spdy
 ---
-# 
-
 SPDY server push is one of the most poorly understood parts of SPDY. When people hear that the protocol supports the server pushing resources to the client, some of them are excited by the possibilities, but many are scared that SPDY will allow the server to push undesired content. What many people don’t realize is that “server push”, where the server is able to push content down to the client that it may not have explicitly requested [yet], already exists. It’s called [resource inlining][1]. Servers already sometimes take an external resource (e.g. scripts, stylesheets, and images) and directly inline it into the document (via inline  or  blocks, or data URIs). SPDY server push is superior to this approach in a number of ways. Here are a few:
 
  [1]: https://developers.google.com/speed/docs/pss/InlineSmallResources

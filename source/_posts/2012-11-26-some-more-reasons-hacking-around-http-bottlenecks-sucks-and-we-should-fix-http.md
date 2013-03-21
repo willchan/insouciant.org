@@ -2,12 +2,8 @@
 title: Some more reasons hacking around HTTP bottlenecks sucks and we should fix HTTP
 author: willchan
 layout: post
-permalink: >
-  http://insouciant.org/tech/some-more-reasons-hacking-around-http-bottlenecks-sucks-and-we-should-fix-http/
-force_ssl:
-  - 1
 categories:
-  - Tech
+  - tech
 tags:
   - css sprites
   - hostname sharding
@@ -15,8 +11,6 @@ tags:
   - performance
   - spdy
 ---
-# 
-
 [![It's not you I hate, HTTP. I hate the hacks people write because of you][2]][2]
 
  []: {% img /images/2012/11/HateHTTP.png %}

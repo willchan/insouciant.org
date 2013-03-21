@@ -4,6 +4,8 @@ author: willchan
 layout: post
 categories:
   - tech
+tags:
+  - ssl
 ---
 {% img /images/2012/10/sslihavenoideawhatimdoing.png %}
 
