@@ -10,32 +10,25 @@ tags:
 ---
 I get the sense that when people discuss SPDY performance features, they pay attention to features like multiplexing and header compression, but very few note the importance of prioritization. I think it’s a shame, because [resource prioritization][1] is [critical][2]. SPDY prioritization enables browsers to advise servers on appropriate priority levels for resources, without having to resort to hacks like [not requesting a low priority resource until higher priority resources have completed][3], which make it difficult for browsers to fully utilize the link. Theoretically, SPDY will let you have your cake and eat it too.
 
- [1]: https://insouciant.org/tech/resource-prioritization-in-chromium/
+ [1]: /tech/resource-prioritization-in-chromium/
  [2]: http://lists.w3.org/Archives/Public/ietf-http-wg/2012AprJun/0523.html
- [3]: https://insouciant.org/tech/throttling-subresources-before-first-paint/
+ [3]: /tech/throttling-subresources-before-first-paint/
 
 In order to demonstrate the effect of SPDY prioritization, my plan was to roll out SPDY on my own server and show the performance improvement we get from [disabling WebKit’s ResourceLoadScheduler][4] (and thus send all requests immediately to Chromium’s network stack, rather than throttling them) and thus rely on SPDY prioritization instead. However, to my dismay, disabling WebKit’s ResourceLoadScheduler actually **slowed down** my personal website. See this [video][5] of the page load (Chrome 23 stable on left, Chrome 25 canary on right. Stable still throttles subresources before first paint) where most of the page completes seconds faster on Chrome 23 in comparison to Chrome 25.
 
  [4]: http://trac.webkit.org/changeset/129070
  [5]: http://www.webpagetest.org/video/view.php?id=121222_e5ad6f227bd85a3f09b7962d7916004f66ec6ab4
 
-
-
 Ugh, what’s wrong? Does SPDY prioritization not work as advertised? Check out the [Chrome 23 stable release load of my website][6] vs the [Chrome 25 canary load of my website][7] to see the difference in behavior.
 
  [6]: http://www.webpagetest.org/result/121222_3N_acfc2f0884d67b9fba7d39e337343916/1/details/
  [7]: http://www.webpagetest.org/result/121222_SZ_0cd27c8ef13e08d6ba1c124493e62821/1/details/
 
-[![Chrome 23 Stable load of https://insouciant.org][9]][9]
-Chrome 23 Stable load of https://insouciant.org
-
-[![Chrome 25 Canary load of https://insouciant.org][10]][10]
-Chrome 25 Canary load of https://insouciant.org
+{% img /images/2012/12/insouciant_stable.png 'Chrome 23 Stable load of insouciant.org' %}
+{% img /images/2012/12/insouciant_canary.png 'Chrome 25 Canary load of insouciant.org' %}
 
 The key thing to notice here is that in Chrome Canary, the critical JS and CSS resources are delayed due to contention. Why is there contention? Shouldn’t SPDY prioritization solve this issue? I looked at the [nginx SPDY patch][10] to find out how they were doing prioritization, and couldn’t figure out how it worked since it didn’t even seem to be present, so I shot Valentin (the nginx dev who authored the SPDY patch) an email asking about SPDY prioritization not working, and he responded with:
 
- []: http://insouciant.org/tech/prioritization-is-critical-to-spdy/attachment/insouciant_stable/
- []: http://insouciant.org/tech/prioritization-is-critical-to-spdy/attachment/insouciant_canary/
  [10]: http://nginx.org/patches/spdy/patch.spdy.txt
 
 > Yes, it is known. I’m currently working on an implementation that will respect priorities as much as possible.  
