@@ -169,16 +169,16 @@ article blockquote {
    * Grey backgrounds with some padding around the images.
    * Soft italicized smaller caption text.
  */
-article > figure {
+figure {
     display: table;
     width: 1px; /* This can be any width, so long as it's narrower than any image */
     background: #eee;
     padding: 9px;
 }
-article > figure > img {
+figure > img {
     display: table-row;
 }
-article > figure > figcaption {
+figure > figcaption {
     display: table-row;
     font-size: smaller;
     color: #555;
