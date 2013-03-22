@@ -164,3 +164,8 @@ article blockquote {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
+/* NOTE(willchan): Shrink figcaptions in articles to distinguish them. */
+article figure figcaption {
+  font-size: smaller;
+}
