@@ -165,7 +165,22 @@ article blockquote {
   word-wrap: break-word;
 }
 
-/* NOTE(willchan): Shrink figcaptions in articles to distinguish them. */
-article figure figcaption {
-  font-size: smaller;
+/* NOTE(willchan): Style the figures.
+   * Grey backgrounds with some padding around the images.
+   * Soft italicized smaller caption text.
+ */
+article > figure {
+    display: table;
+    width: 1px; /* This can be any width, so long as it's narrower than any image */
+    background: #eee;
+    padding: 9px;
+}
+article > figure > img {
+    display: table-row;
+}
+article > figure > figcaption {
+    display: table-row;
+    font-size: smaller
+    color: #555;
+    font-style: italic;
 }
