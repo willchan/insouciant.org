@@ -41,7 +41,7 @@ Note that CloudFlare’s making the right tradeoffs here in an HTTP world. But t
 
 [Hostname sharding][10] is another commonly accepted “[best practice][11]” designed to work around HTTP’s lack of parallelism. It’s true that it does indeed make browsing faster in general, but it has numerous downsides. It increases the number of connections, thereby increasing resource consumption at TCP endpoints and middleboxes, increases DNS traffic and entries (and the TCP connection is blocked on the DNS lookup), and splits congestion control information across multiple connections. Moreover, more parallelism doesn’t necessarily make things faster. It might result in more contention and more interleaving. For more details, see [Patrick’s post][12] on the matter.
 
- [10]: http://https://developers.google.com/speed/docs/best-practices/rtt#ParallelizeDownloads
+ [10]: https://developers.google.com/speed/docs/best-practices/rtt#ParallelizeDownloads
  [11]: http://www.stevesouders.com/blog/2009/05/12/sharding-dominant-domains/
  [12]: http://bitsup.blogspot.com/2011/02/http-parallel-connections-firefox.html
 
