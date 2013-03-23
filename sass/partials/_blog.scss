@@ -150,15 +150,19 @@ article + article {
 figure {
     display: table;
     background: #eee;
-    padding: 9px;
+    padding: 0.5em;
+    margin: 0.5em;
 }
 figure > img {
     display: table-row;
+    border: 0;
 }
 figure > figcaption {
     display: table-caption;
     caption-side: bottom;
     font-size: smaller;
+    background: #eee;
     color: #555;
     font-style: italic;
+    padding: 0.5em;
 }
