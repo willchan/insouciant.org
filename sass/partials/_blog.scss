@@ -148,16 +148,19 @@ article + article {
  */
 figure {
     display: table;
-    width: 1px; /* This can be any width, so long as it's narrower than any image */
+    /* width: 1px; This can be any width, so long as it's narrower than any image */
     background: #eee;
     padding: 9px;
 }
 figure > img {
     display: table-row;
-    max-width: none
 }
 figure > figcaption {
+/*
     display: table-row;
+*/
+    display: table-caption;
+    caption-side: bottom;
     font-size: smaller;
     color: #555;
     font-style: italic;

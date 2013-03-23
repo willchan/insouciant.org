@@ -143,21 +143,21 @@ article + article {
 /* NOTE(willchan): Style the figures.
    * Grey backgrounds with some padding around the images.
    * Soft italicized smaller caption text.
-   * Make sure the img has max-width set to none so it can fill the figure. The
-   problem with this technique is it can cause the image to overflow.
+   * Use table layout at the figure, with the image set as a table-row,
+   and the figcaption as a table-caption on the bottom. This technique keeps
+   the image responsive and allows the caption to word wrap.
  */
 figure {
     display: table;
-    width: 1px; /* This can be any width, so long as it's narrower than any image */
     background: #eee;
     padding: 9px;
 }
 figure > img {
     display: table-row;
-    max-width: none
 }
 figure > figcaption {
-    display: table-row;
+    display: table-caption;
+    caption-side: bottom;
     font-size: smaller;
     color: #555;
     font-style: italic;
