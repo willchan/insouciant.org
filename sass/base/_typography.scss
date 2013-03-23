@@ -164,23 +164,3 @@ article blockquote {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-
-/* NOTE(willchan): Style the figures.
-   * Grey backgrounds with some padding around the images.
-   * Soft italicized smaller caption text.
- */
-figure {
-    display: table;
-    width: 1px; /* This can be any width, so long as it's narrower than any image */
-    background: #eee;
-    padding: 9px;
-}
-figure > img {
-    display: table-row;
-}
-figure > figcaption {
-    display: table-row;
-    font-size: smaller;
-    color: #555;
-    font-style: italic;
-}
