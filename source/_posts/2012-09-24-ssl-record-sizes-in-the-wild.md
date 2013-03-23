@@ -31,8 +31,6 @@ UPDATE (Oct 24, 2012): andrew@nginx.com tells me you can update NGX\_SSL\_BUFSI
 
 Facebook is pretty good:{% img /images/2012/09/tls-trace-facebook.com_.png TLS trace for facebook.com %}
 
- []: http://insouciant.org/wp-content/uploads/2012/09/tls-trace-facebook.com_.png
-
 My site sucks since I have no way to control this in nginx:{% img /images/2012/09/tls-trace-insouciant.org_.png TLS trace for insouciant.org %}
 
 I happened to be reading an article on DigitalOcean (dunno who they are), so I grabbed a trace that turned out to be remarkably bad:{% img /images/2012/09/tls-trace-www.digitalocean.com_.png TLS trace for www.digitalocean.com %}

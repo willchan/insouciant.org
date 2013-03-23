@@ -45,7 +45,7 @@ The key thing to notice here is that in Chrome Canary, the critical JS and CSS r
 
 OK! That makes sense. Nginx’s SPDY implementation is still in beta, so it “works” but does not respect prioritization yet. That’s fair, because they’re still working on it. The problem is that people are deploying real websites using nginx’s SPDY support, even though prioritization doesn’t work at all. For example, check out the [Chrome 23 stable][11] vs [Chrome 25 canary][12] load time waterfalls and [video][13] for [https://getnodecraft.net](https://getnodecraft.net):
 
-<video width="100%" height="240" src="https://insouciant.org/wp-content/uploads/2012/12/getnodecraft_chrome_stable_vs_chrome_canary.mp4" controls="controls"></video>
+<video width="100%" height="240" src="/videos/2012/12/getnodecraft_chrome_stable_vs_chrome_canary.mp4" controls="controls"></video>
 
  [11]: http://www.webpagetest.org/result/121224_GW_5d074747d79ba4f51b79b169662a7447/1/details/
  [12]: http://www.webpagetest.org/result/121224_9H_3a0c207b85c38f3b36f8c84f2b987e69/1/details/
