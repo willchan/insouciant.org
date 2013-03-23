@@ -8,6 +8,7 @@ tags:
   - chromium
   - performance
   - spdy
+comments: true
 ---
 Awhile back, Gmail team asked some Chromium devs why Google Chrome downloaded CSS so much more slowly than JS. This sounded strange to me, since I knew the code, and Chromium [clearly prioritizes script and stylesheets at the same level][1] (look for DetermineRequestPriority). I was initially skeptical of their claim, but then they said they had data that proved otherwise. Specifically, they told me:
 

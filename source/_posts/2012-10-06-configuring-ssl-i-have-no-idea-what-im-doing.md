@@ -6,6 +6,7 @@ categories:
   - tech
 tags:
   - ssl
+comments: true
 ---
 {% img /images/2012/10/sslihavenoideawhatimdoing.png %}
 

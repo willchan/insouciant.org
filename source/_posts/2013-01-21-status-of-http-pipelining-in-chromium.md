@@ -8,6 +8,7 @@ tags:
   - chromium
   - http pipelining
   - performance
+comments: true
 ---
 OK, people have asked me this enough times, so it’s time to write down what’s up with pipelining in Chromium. In short, Chromium has a very naive pipelining implementation that is off by default, and it’s unclear if we’ll ever enable it by default. The primary reasons we will not enable it for at least the foreseeable future are:
 

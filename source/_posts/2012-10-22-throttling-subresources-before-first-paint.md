@@ -8,6 +8,7 @@ tags:
   - chromium
   - performance
   - webkit
+comments: true
 ---
 In my last [post about resource prioritization][1], I mentioned that WebKit actually [holds back from issuing subresources that can’t block the parser before first paint][2]. Well, that’s true, except for the Chromium port, because recently we decided to [disable that][3]. You may be wondering, why would we do that?
 

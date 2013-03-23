@@ -10,6 +10,7 @@ tags:
   - http
   - performance
   - spdy
+comments: true
 ---
 {% img /images/2012/11/HateHTTP.png 'It&#39;s not you I hate Cardassian...' 'It&#39;s not you I hate, HTTP. I hate the hacks people write because of you' %}
 

@@ -7,6 +7,7 @@ categories:
 tags:
   - localstorage
   - performance
+comments: true
 ---
 I [previously discussed LocalStorage load times][1], and had concluded that it wasn’t too bad. However, when I got back from my new year’s holiday in Patagonia, I started digging through my email backlog and found an interesting line of questioning from GMail engineers, asking why Chrome’s first LocalStorage access was so slow in their use case, and providing data showing it. I, of course, knew why it *should* be slow, because it’s loading the *entire* DB from disk on the first access. But I previously had data that showed it wasn’t so bad. What I realized then was that I was not accounting for the size of the DB. So I added [histograms to record LocalStorage DB sizes and load times by size][2]. Note that LocalStorage is cached both in the renderer and browser processes. Furthermore, note that I’m only recording a single sample for each time LocalStorage is loaded into the process’s in-memory cache. This obviously means that long-lived renderer processes (roughly speaking, tabs) will only get one sample recorded, even if they heavily use LocalStorage.
 

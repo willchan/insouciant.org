@@ -7,6 +7,7 @@ categories:
 tags:
   - performance
   - ssl
+comments: true
 ---
 I decided to set up this website as a learning experience, since I don’t have any firsthand experience with how the world outside Google deploys sites. I thought it’d be fun to set it up as an https site so I could learn more about SSL deployments. Remembering one of Mike’s rants about [the need to tune SSL record sizes][1], I wanted to make sure I configured nginx to do this properly. However, a configuration option doesn’t seem to exist! I shot Igor an email to ask him if this was true, and he confirmed it. He also added his thoughts on the appropriate record size:
 

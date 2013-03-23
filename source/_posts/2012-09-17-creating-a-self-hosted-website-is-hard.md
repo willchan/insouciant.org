@@ -7,6 +7,7 @@ categories:
 tags:
   - ssl
   - wordpress
+comments: true
 ---
 I didn’t realize it’d be so hard. It’s a good experience though. Getting SSL set up correctly was a bit of a pain, and I still don’t know if I’ve got it done right :) Hopefully my coworkers can point out my silly mistakes. Apparently StartSSL won’t give me a cert until insouciant.org has been around for a few days, so I’ll just have to use a self-signed cert for now. Getting all the various WordPress tweaks to make HTTPS work, and enable caching headers (which are still sadly off, according to redbot.org, but close enough), and employ minification and all those other techniques was fun but time-consuming. Shouldn’t this all just work out of box?
 

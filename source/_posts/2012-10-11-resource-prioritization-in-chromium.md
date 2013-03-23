@@ -8,6 +8,7 @@ tags:
   - chromium
   - performance
   - spdy
+comments: true
 ---
 Resource prioritization is a difficult problem for browsers, because they don’t fully understand the nature of the resources in the page, so they have to rely on heuristics. It seems like the main document is probably the most important resource, so it’d be good to prioritize that highly. Scripts block parsing, and stylesheets and block rendering. Both can lead to discovering other resources, so it’s probably a good idea to prioritize them reasonably highly too. Then you have other resources like media and async XHRs and images. For the exact algorithm Chromium uses, you can refer to the [code][1]. It’s noticeably [suboptimal with regards to sync vs async resources][2], and there is probably more room for improvement. Indeed, we’re kicking around some ideas we hope to play around with in the near future.
 

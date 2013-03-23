@@ -10,6 +10,7 @@ tags:
   - performance
   - spdy
   - ssl
+comments: true
 ---
 Connection latency and parallelism are significant factors in the networking component of web performance. As such, Chromium engineers have spent a significant amount of time studying how best to manage our connections – how many to keep open, how long to keep them open, etc. Here, I present the various considerations that have motivated our current design and implementation.
 

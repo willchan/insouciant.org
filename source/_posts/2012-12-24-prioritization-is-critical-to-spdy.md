@@ -7,6 +7,7 @@ categories:
 tags:
   - performance
   - spdy
+comments: true
 ---
 I get the sense that when people discuss SPDY performance features, they pay attention to features like multiplexing and header compression, but very few note the importance of prioritization. I think it’s a shame, because [resource prioritization][1] is [critical][2]. SPDY prioritization enables browsers to advise servers on appropriate priority levels for resources, without having to resort to hacks like [not requesting a low priority resource until higher priority resources have completed][3], which make it difficult for browsers to fully utilize the link. Theoretically, SPDY will let you have your cake and eat it too.
 
