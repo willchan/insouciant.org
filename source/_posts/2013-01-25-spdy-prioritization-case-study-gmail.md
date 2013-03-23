@@ -29,13 +29,12 @@ At this point I was pretty intrigued. There’s nothing like a mystery to pique 
 
  [2]: http://www.w3.org/2012/11/webperf-slides-hundt.pdf
 
-[![Viewing Gmail's main JS and CSS loading in DevTools][4]][4]
-Viewing Gmail’s main JS and CSS loading in DevTools
+<figure>
+{% img /images/2013/01/GmailDevTools.png %}
+<figcaption>Viewing Gmail’s main JS and CSS loading in DevTools</figcaption>
+</figure>
 
 As can be seen, the CSS is smaller, and it starts after the JS load started, but it generally finishes afterward. Indeed, in practice, this matches what we see in the wild. The question is, why? Well, the answer of course is that this is expected behavior with SPDY.
-
- []: https://insouciant.org/wp-content/uploads/2013/01/GmailDevTools.png
- [4]: https://insouciant.org/wp-content/uploads/2013/01/GmailDevTools.png
 
 To figure out why, we need to see what the resources look like from the browser’s perspective. As previously mentioned, the javascript resource is actually an iframe where the html is full of inline script blocks. As the code I linked to earlier shows, an iframe is requested with the highest priority. And the CSS resource is actually JSON that is requested via an XHR. Again, as the code I linked to earlier shows, an XHR is requested with the lowest priority. If we look at the [SPDY3 spec][5], we see that The sender and recipient SHOULD use best-effort to process streams in the order of highest priority to lowest priority. As specced, that means that Gmail’s iframe should pre-empt the XHR served over the same SPDY session. That’s of course why, from the Gmail team’s perspective, the CSS download seems to download more slowly than JS. They’re measuring from Javascript using techniques that do not have visibility into what’s happening in the SPDY session, so they can see that the CSS JSON is taking a long time to download, but cannot tell that it’s because it’s being downloaded at a lower priority than other resources and thus is getting pre-empted. Anyhow, mystery solved!
 

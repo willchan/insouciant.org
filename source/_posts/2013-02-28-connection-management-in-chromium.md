@@ -66,7 +66,7 @@ Example of socket late binding. Connection 1 is used for bar.html, and then reus
 
 Delaying the binding of a HTTP transaction to an actual socket gave us important flexibility in deciding which connect job would fulfill a socket request. This flexibility would enable us to improve the median and long tail cases in important ways.
 
-### <a id="tcp_backup_connect_jobs"></a>[TCP “backup” connect jobs](tcp_backup_connect_jobs)
+### <a id="tcp_backup_connect_jobs"></a>[TCP “backup” connect jobs](#tcp_backup_connect_jobs)
 
 Examining the TCP connection latency chart [above](#tcp_connection_latency_chart), you can see that the Windows connection latency has a few spikes. The spikes at the 3s mark and later correspond to the Windows TCP SYN retransmission timeout. Now, 3 seconds may make sense for some applications, but it’s horrible for an interactive application where the user is staring at the screen waiting for the page to load. Our data indicates that around 1% of Windows TCP connect() times fall into the 3~ second bucket. Our solution here was to introduce a “backup” connect job, set to start 250ms <a id="return-note-conn-man-2"></a>[<sup>2</sup>](#note-conn-man-2) after the first socket connect() to an origin. This [very hacky solution][33] attempts to workaround the unacceptably long TCP SYN retransmission by retrying sooner. Note that we only ever have one “backup” connect job active per destination host. After implementing this, our socket request histograms showed that the spike at 3s due to the TCP level SYN transmission timer went down significantly. As someone who feels very passionately about long-tail latency and reducing jank, this change makes me feel very good, and I was excited when Firefox [followed suit][34].
 
