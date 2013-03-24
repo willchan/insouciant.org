@@ -3,9 +3,9 @@
 # ----------------------- #
 
 # NOTE(willchan): Uncomment for real deployment
-# url: https://insouciant.org
+url: https://insouciant.org
 # NOTE(willchan): Uncomment for test deployment to /testing directory.
-url: https://insouciant.org/testing
+# url: https://insouciant.org/testing
 
 title: Insouciant
 subtitle: William Chan's blag
@@ -21,9 +21,9 @@ date_format: "ordinal"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 # NOTE(willchan): Uncomment for real deployment
-# subscribe_rss: /atom.xml
+subscribe_rss: /atom.xml
 # NOTE(willchan): Uncomment for test deployment to /testing directory.
-subscribe_rss: /testing/atom.xml
+# subscribe_rss: /testing/atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
 email: willchan@gmail.com
@@ -35,11 +35,11 @@ email: willchan@gmail.com
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 
 # NOTE(willchan): Uncomment for real deployment
-#root: /
-#destination: public
+root: /
+destination: public
 # NOTE(willchan): Uncomment for test deployment to /testing directory.
-root: /testing
-destination: public/testing
+# root: /testing
+# destination: public/testing
 
 permalink: /:categories/:title/
 source: source
