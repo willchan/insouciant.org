@@ -298,6 +298,17 @@ task :set_root_dir, :dir do |t, args|
   end
 end
 
+desc "Copy and compress all .html, .js, and .css files. Useful with nginx http_gzip_static_module"
+task :generate_gzip do
+  puts "Gzipping HTML, JS, and CSS files in #{public_dir}"
+  puts "Running `find #{public_dir} -type f -name \*.html -exec sh -c 'gzip -9cn {} > {}.gz; touch {} {}.gz' \\;`"
+  system "find #{public_dir} -type f -name \*.html -exec sh -c 'gzip -9cn {} > {}.gz; touch {} {}.gz ' \\;"
+  puts "Running `find #{public_dir} -type f -name \*.js -exec sh -c 'gzip -9cn {} > {}.gz; touch {} {}.gz' \\;`"
+  system "find #{public_dir} -type f -name \*.js -exec sh -c 'gzip -9cn {} > {}.gz; touch {} {}.gz ' \\;"
+  puts "Running `find #{public_dir} -type f -name \*.css -exec sh -c 'gzip -9cn {} > {}.gz; touch {} {}.gz' \\;`"
+  system "find #{public_dir} -type f -name \*.css -exec sh -c 'gzip -9cn {} > {}.gz; touch {} {}.gz ' \\;"
+end
+
 desc "Set up _deploy folder and deploy branch for Github Pages deployment"
 task :setup_github_pages, :repo do |t, args|
   if args.repo
