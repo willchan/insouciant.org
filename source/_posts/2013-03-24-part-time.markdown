@@ -1,0 +1,24 @@
+---
+layout: post
+title: "Part-time"
+date: 2013-03-24 03:31
+comments: true
+categories: 
+  - unsorted
+comments: true
+tags:
+  - google
+  - chrome
+  - chromium
+  - ietf
+  - http2
+  - spdy
+---
+Yay, I finally began part-time employment at Google on March 18! That obviously has a big impact on my life, and some of that will carry through to this blog.
+
+*   I switched to [Octopress](octopress.org). I'll write more on that later, but overall I <em>really like it</em>.
+*   I'm still a Google Chrome representative at IETF httpbis for HTTP/2.0 related work. That's officially my only work responsibility now, although I'm sure people will continue to bug me about random Chromium related stuff. I've handed off Chromium SPDY implementation work to my very capable colleagues.
+*   I've still got a long queue of Chromium / webperf / networking related blog posts that I've been meaning to write. I'll post them as I get around to them.
+*   I'm going to start writing about other random things, like new hacking projects, travel, and all the other cool (at least to me!) new things I'm up to.
+
+So yeah, this blog's content may change a bit, and I may not post as frequently as I hope to often be out on some adventure.
