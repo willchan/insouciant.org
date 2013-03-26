@@ -233,7 +233,7 @@ Notes:
  [85]: http://cloudshark.org/captures/4b7e565ee34a?filter=tcp.stream eq 4
  [86]: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383630(v=vs.85).aspx
  [87]: https://twitter.com/ericlaw
- [88]: #comment-67
+ [88]: #comment-841331894
  [89]: #return-note-conn-man-3
  [90]: #return-note-conn-man-4
  [91]: http://linux.die.net/man/7/tcp
