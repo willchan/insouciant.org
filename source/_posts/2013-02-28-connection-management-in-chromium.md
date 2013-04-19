@@ -14,7 +14,7 @@ comments: true
 ---
 Connection latency and parallelism are significant factors in the networking component of web performance. As such, Chromium engineers have spent a significant amount of time studying how best to manage our connections – how many to keep open, how long to keep them open, etc. Here, I present the various considerations that have motivated our current design and implementation.
 
-## <a id="#Connection_latency">[Connection latency](#Connection_latency)</a>
+## <a id="Connection_latency">[Connection latency](#Connection_latency)</a>
 
 It’s expensive to set up a new connection to a host. First <a id="return-note-conn-man-1"></a>[<sup>1</sup>](#note-conn-man-1), Chromium has to resolve the hostname, which is already an expensive process as [I’ve previously discussed][20]. Then it has to do various handshakes. This means doing the TCP handshake, and then potentially doing an SSL handshake. As seen below, both of these are expensive operations. Note that the samples gathered here represent the TCP connect()s and SSL handshakes as gathered over a single day in February 2013 from our users who opt-in to making Google Chrome better. And since these are gathered at the network stack level, it includes more than just HTTP transactions, and more than just web browsing requests.
 
