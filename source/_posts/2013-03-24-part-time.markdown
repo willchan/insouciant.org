@@ -18,4 +18,4 @@ Yay, I finally began part-time employment at Google on March 18!
 
 *   I'm still a Google / Chromium representative at IETF httpbis for HTTP/2.0 related work. That's officially my only work responsibility now, although I'm sure people will continue to bug me about random Chromium related stuff. I've handed off Chromium SPDY implementation work to my very capable colleagues.
 *   I've still got a long queue of Chromium / webperf / networking related blog posts that I've been meaning to write. I'll post them as I get around to them.
-*   In my spare time, I switched to [Octopress](octopress.org). I'll write more on that later, but overall I <em>really like it</em>.
+*   In my spare time, I switched to [Octopress](http://octopress.org). I'll write more on that later, but overall I <em>really like it</em>.
