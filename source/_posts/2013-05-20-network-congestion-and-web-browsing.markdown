@@ -89,7 +89,7 @@ Here I examine my daily ["kittens" image search](https://www.google.com/search?q
 <figure>
 <a href="http://www.webpagetest.org/result/130417_4W_172N/">{% img /images/2013/05/Google_Image_Search_Kittens_Waterfall.png %}</a>
 <figcaption>
-Waterfall of the Google Kitten Search page load. Of note is the portion where the browser opens 4 connections in parallel to each of the sharded encrypted-tbn\[0-3\].gstatic.com hostnames, leading to severe congestion related slowdown during the SSL handshake (due to transmitting the SSL certificates) and the image downloads. In particular, the waterfall makes clear the increased latency in completing the SSL handshake, which directly adds to latency until image downloads begin, which increases the time until the user sees the images he/she is searching for.
+Waterfall of the Google Kitten Search page load. Of note is the portion where the browser opens 6 connections in parallel to each of the sharded encrypted-tbn\[0-3\].gstatic.com hostnames, leading to severe congestion related slowdown during the SSL handshake (due to transmitting the SSL certificates) and the image downloads. In particular, the waterfall makes clear the increased latency in completing the SSL handshake, which directly adds to latency until image downloads begin, which increases the time until the user sees the images he/she is searching for.
 </figcaption>
 </figure>
 
