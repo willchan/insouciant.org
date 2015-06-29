@@ -1,0 +1,37 @@
+---
+layout: post
+title: "Back to SF after the U.S. Digital Service"
+date: 2015-06-29 16:00
+comments: true
+categories: 
+  - tech
+tags:
+  - USDS
+---
+After 6 months working for the [U.S. Digital Service](https://www.whitehouse.gov/digital/united-states-digital-service), I returned back to San Francisco mid-April to figure out what was next for me back here. I got up that Thursday morning and went out to ride the Google shuttle down to Mountain View so I could see what was happening back at Google.
+
+It's hard to describe the multitude of feelings returning back to Google invoked inside me. Sitting there at a Google cafe, eating delicious, healthy, free food, walking around the hallways with all the internal corporate advertisements about tech talks, yoga classes, cinema nights, etc...Yes, after 6 months through a brutal DC winter, working in dreary government offices, I had forgotten how comfortable the warm embrace of corporate America was.
+
+By far, the most conflicted thing for me was catching up with my colleagues. They'd heartily welcome me back and ask for stories about working for the U.S. Digital Service. Everyone always loves hearing about train wrecks, so I'd regale them with horror stories about the terrifying things I saw in government. But then I'd tell them that there were also good, smart people in government who are trying to do the right thing, but the organizational dysfunction binds their hands. How, at the U.S. Digital Service, we're able to leverage our unique position as outsiders, with no vested interest other than getting shit to work, to effect change at different U.S. government agencies.
+
+My colleagues would listen fascinated by the stories, and then frustrated by the irritatingly simple problems I'd describe. And then would say it was awesome how we were able to fix some of the problems. Some would then say how they'd like to take time off to work for the U.S. Digital Service too. And then I'd ask them how things were going back at Google. They'd excitedly talk about their work on networking protocols, web standards, web performance, web security, etc...all the kinda stuff that I used to work on back before I left for DC.
+
+Within a few seconds, I'd fall back into my old groove, geeking out with other engineers about tech stuff. It was so fun and intellectually satisfying to nerd out with them about all the techie subjects I loved. But after a period of time, sometimes sooner, sometimes later, this background process would kick off in the back of my head and ask me _"But does this matter?"_
+
+I like to think that it does matter. I still believe that the advancing state of computing technology has overall benefitted peoples' lives, so I'm proud to have worked on improving core technology like network protocols and the web platform at Google. But when I look at what the tech industry is spending its energy on, I see [them working on helping rich people find taxis more easily, selling ads more effectively, or building sexting apps](http://www.nytimes.com/2014/03/16/magazine/silicon-valleys-youth-problem.html). It bothers me that I might be stuck in an ivory tower, solving abstract computing technology problems that enable the tech industry to make money off silly products for the 1%, rather than [solving important problems for people that need help](http://www.theatlantic.com/business/archive/2015/06/what-is-the-greatest-good/395768/).
+
+<blockquote>
+<p>Approximately 200 million people suffer from malaria each year, and the death estimates range between 400,000 and 800,000. About 90 percent of those mortalities are in sub-Saharan Africa, and three-quarters of them occur in children younger than five. The second-order effects of the disease are vicious: Malaria is a massive impediment to economic growth, since survivors often cannot work, and parents have to devote their lives to caring for their sick children.</p>
+ 
+<p>I’ve read, and typed, and read again these numbers, and they are so stark to me that they can easily float away into the atmosphere of statistics, escaping true empathy. Understanding one nation’s experience feels more visceral: Every day, more than 500 people die from malaria in the Democratic Republic of Congo, and the majority of these deaths are children under the age of five. AMF offers a shattering metaphor: <strong>Imagine a fully booked 747 airplane and infants strapped into seats A through K of every row of the economy section; their feet cannot reach the floor. Every day, this plane disappears into the Congo River, killing every soul on board. That is malaria—in one country. By GiveWell’s calculations it would cost $1.7 million to save the airplane.</strong></p>
+</blockquote>
+
+This is nothing I hadn't thought about before. What was different this time was that I just came back from 6 months helping fix government digital services that, by and large, benefited the neediest demographic in the United States. These critical government services were failing or at risk for many frustratingly simple (from the technical standpoint) reasons, hampered by systemic organizational dysfunction that normal federal employees or contractors working within the system are ill-equipped to address. The U.S. Digital Service, on the other hand, for a mix of reasons, had unique leverage to actually execute and make a large impact.
+
+For a long time, I had struggled to find projects with software engineering problems that I thought were ultimately impactful on peoples' lives. Working for the U.S. Digital Service, I finally found something where my skillset could be applied to meaningfully improve large numbers of poor peoples' lives. If not for the fact that the bulk of my friends and loved ones live in California, I could have seen myself stay at the U.S. Digital Service, working to improve the government services our society, especially the poorest segments of it, so rely on.
+
+Working for the U.S. Digital Service showed me that, indeed, there were far better ways for me to spend my time if I really wanted to make a difference in people's lives. I couldn't go back to what I was doing before. Even though I'm still a believer in technology, particularly in the web platform, as a force for good, society needs more people working directly on problems that matter. Google will always be able to find someone to work on its core software platforms and business. I needed to redirect my energies towards problems that society wasn't adequately addressing.
+
+So, after a few minutes of geeking out with a colleague on the state of tech, that nagging voice in the back of my head would smother my little bit of happiness, and I would look for the next opportunity to end the conversation. As it wound down, my coworker would always ask the same question: "So, are you back?"
+
+I didn't know. I was not hopeful that I would find a suitable project for me at Google, or for that matter, in the bay area. Most social impact projects and organizations are in the east coast, and, at least as far as I could tell (but in all likelihood, it's probably because I suck at finding them), most of them don't seem to have significant / meaningful software projects. I had a few leads, and fortunately one of them panned out. I have a new project, working on problems that negatively impact, and sometimes kill, millions of the poorest people in the world. So I'm pretty happy to say that, yes, I'm back here to stay.
